@@ -113,19 +113,54 @@ const arrayIcons = [
 	}
 ];
 
-console.log(arrayIcons);
+console.log();
 // container
 const grid = document.getElementById('grid');
-
+	
 // creazione dei box
-for (let index = 0; index < arrayIcons.length; index++) {
+for (let i = 0; i < arrayIcons.length; i++) {
 	const box = document.createElement('div');
 	box.classList.add('box');
+	
 	const icona = document.createElement('i');
-	icona.classList.add()
+	icona.classList.add(arrayIcons[i].family);
+	icona.classList.add(arrayIcons[i].prefix + arrayIcons[i].name);
+	let span = document.createElement('span');
+	span = arrayIcons[i].name
 
 
-	grid.append(box)
-	box.append(icona)
+	grid.append(box);
+	box.append(icona);
+	box.append(span);
+
+	if (arrayIcons[i].type === 'animal') {
+		icona.style.color = arrayIcons[i].color;
+	}
+
+	else if (arrayIcons[i].type === 'vegetable') {
+		icona.style.color = arrayIcons[i].color;
+	}
+
+	else {
+		icona.style.color = arrayIcons[i].color;
+	}
+
+}
+const selezione = document.getElementById('selezione').value;
+
+switch (selezione) {
+	case 0:
+	default:
+		
+	break;
+
+	
+	case 1:
+	for (let i = 0; i < arrayIcons.length; i++) {
+		if (arrayIcons[i].type === 'vegetable' || arrayIcons[i].type === 'user') {
+			box.style.display = 'none';
+		}
+	}
+	break;
 }
 	
