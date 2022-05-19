@@ -146,21 +146,48 @@ for (let i = 0; i < arrayIcons.length; i++) {
 	}
 
 }
-const selezione = document.getElementById('selezione').value;
 
-switch (selezione) {
-	case 0:
-	default:
-		
-	break;
+	const box2 = document.querySelector('.box')
 
+const selezione = document.getElementById("selezione");
+selezione.addEventListener('change', function () {
 	
-	case 1:
-	for (let i = 0; i < arrayIcons.length; i++) {
-		if (arrayIcons[i].type === 'vegetable' || arrayIcons[i].type === 'user') {
-			box.style.display = 'none';
+	let value = selezione.options[selezione.selectedIndex].value;
+	console.log(value);
+	
+	switch (selezione) {
+		case 0:
+			default:;
+		break;
+
+		
+		case 1:
+		for (let i = 0; i < arrayIcons.length; i++) {
+			if (arrayIcons[i].type === 'vegetable' || arrayIcons[i].type === 'user') {
+				box2.style.display = 'none';
+			}
 		}
+		break;
 	}
-	break;
+
 }
+
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const selezione = document.getElementById('selezione').value;
+
+
 	
